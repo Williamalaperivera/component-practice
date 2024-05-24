@@ -1,30 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
 import { Mycomponent } from './componentes/Mycomponent';
 import { SecondComponent } from './componentes/SecondComponent';
 import { ThirdComponent } from './componentes/ThirdComponent';
+import { useState } from 'react';
+import { Child } from './componentes/Child';
+import { FourthComponent } from './componentes/FourthComponent';
 
 function App() {
-  const medicalRecord ={
+
+  const [name, setName] = useState("Lina");
+  const [message, setMessage] = useState("");
+
+  const addMessage = (message) => {
+    console.log(message);
+    setMessage(message);
+  }
+
+ const medicalRecord ={
     height:"160",
     sangre: "RHO+",
-    allegries: "none",
+    allegies: "none",
   }
-=======
-import { MyComponent } from './components/MyComponent';
-import { SecondComponent } from './components/SecondComponent';
-import { ThirdComponent } from './components/ThirdComponent';
-
-function App() {
-
-  const medicalRecord = {
-    height: "160",
-    bloodGroup: "RhO+",
-    allergies: "None"
-  }
-
->>>>>>> 23831e9e0d4112de3304c074c38f8dee0ede394e
   return (
     <div className="App">
       <header className="App-header">
@@ -32,26 +29,27 @@ function App() {
         <p>
           Estructura inicial del proyecto y limpia.
         </p>
-<<<<<<< HEAD
+        <div>
+          <hr />
+          <FourthComponent />
+          <hr />
+        </div>
+         
+        <h1>mensaje del hijo</h1>
+        <p>{ message }</p>
+        <Child name={name} setName={setName} addMessage={addMessage}/>
         <hr/>
+
+
         <ThirdComponent 
-        name= "William"
-        lastName= "Alape Rivera"
-        card= {medicalRecord} />
+          name= "William"
+          lastName= "Alape Rivera"
+          card= {medicalRecord} />
 
         <SecondComponent />
         <Mycomponent/>
         
 
-=======
-        <SecondComponent />
-        <ThirdComponent 
-          name="Inés"
-          lastName="Oliveros"
-          card={medicalRecord}
-        />
-        <MyComponent />
->>>>>>> 23831e9e0d4112de3304c074c38f8dee0ede394e
       </header>
     </div>
   );
